@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35514.174 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Kinect Transmitter", "Kinect Transmitter\Kinect Transmitter.vcxproj", "{0EE6A9D6-94C8-4F21-94B0-76DC37D71522}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8B9315DE-18FC-420C-9C7E-10BADF6D8577} = {8B9315DE-18FC-420C-9C7E-10BADF6D8577}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Orbbec Femto Bolt Transmitter", "Orbbec Femto Bolt Transmitter\Orbbec Femto Bolt Transmitter.vcxproj", "{D2283751-5C3B-4DAA-BECD-0796FB72EDCB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8B9315DE-18FC-420C-9C7E-10BADF6D8577} = {8B9315DE-18FC-420C-9C7E-10BADF6D8577}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Azure Kinect DK Transmitter", "Azure Kinect DK Transmitter\Azure Kinect DK Transmitter.vcxproj", "{32815C9A-4E95-4F4E-AD67-723944446405}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8B9315DE-18FC-420C-9C7E-10BADF6D8577} = {8B9315DE-18FC-420C-9C7E-10BADF6D8577}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WebSocketLib", "WebSocketLib\WebSocketLib.vcxproj", "{8B9315DE-18FC-420C-9C7E-10BADF6D8577}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0EE6A9D6-94C8-4F21-94B0-76DC37D71522}.Debug|x64.ActiveCfg = Debug|x64
+		{0EE6A9D6-94C8-4F21-94B0-76DC37D71522}.Debug|x64.Build.0 = Debug|x64
+		{0EE6A9D6-94C8-4F21-94B0-76DC37D71522}.Debug|x86.ActiveCfg = Debug|Win32
+		{0EE6A9D6-94C8-4F21-94B0-76DC37D71522}.Debug|x86.Build.0 = Debug|Win32
+		{0EE6A9D6-94C8-4F21-94B0-76DC37D71522}.Release|x64.ActiveCfg = Release|x64
+		{0EE6A9D6-94C8-4F21-94B0-76DC37D71522}.Release|x64.Build.0 = Release|x64
+		{0EE6A9D6-94C8-4F21-94B0-76DC37D71522}.Release|x86.ActiveCfg = Release|Win32
+		{0EE6A9D6-94C8-4F21-94B0-76DC37D71522}.Release|x86.Build.0 = Release|Win32
+		{D2283751-5C3B-4DAA-BECD-0796FB72EDCB}.Debug|x64.ActiveCfg = Debug|x64
+		{D2283751-5C3B-4DAA-BECD-0796FB72EDCB}.Debug|x64.Build.0 = Debug|x64
+		{D2283751-5C3B-4DAA-BECD-0796FB72EDCB}.Debug|x86.ActiveCfg = Debug|Win32
+		{D2283751-5C3B-4DAA-BECD-0796FB72EDCB}.Debug|x86.Build.0 = Debug|Win32
+		{D2283751-5C3B-4DAA-BECD-0796FB72EDCB}.Release|x64.ActiveCfg = Release|x64
+		{D2283751-5C3B-4DAA-BECD-0796FB72EDCB}.Release|x64.Build.0 = Release|x64
+		{D2283751-5C3B-4DAA-BECD-0796FB72EDCB}.Release|x86.ActiveCfg = Release|Win32
+		{D2283751-5C3B-4DAA-BECD-0796FB72EDCB}.Release|x86.Build.0 = Release|Win32
+		{32815C9A-4E95-4F4E-AD67-723944446405}.Debug|x64.ActiveCfg = Debug|x64
+		{32815C9A-4E95-4F4E-AD67-723944446405}.Debug|x64.Build.0 = Debug|x64
+		{32815C9A-4E95-4F4E-AD67-723944446405}.Debug|x86.ActiveCfg = Debug|Win32
+		{32815C9A-4E95-4F4E-AD67-723944446405}.Debug|x86.Build.0 = Debug|Win32
+		{32815C9A-4E95-4F4E-AD67-723944446405}.Release|x64.ActiveCfg = Release|x64
+		{32815C9A-4E95-4F4E-AD67-723944446405}.Release|x64.Build.0 = Release|x64
+		{32815C9A-4E95-4F4E-AD67-723944446405}.Release|x86.ActiveCfg = Release|Win32
+		{32815C9A-4E95-4F4E-AD67-723944446405}.Release|x86.Build.0 = Release|Win32
+		{8B9315DE-18FC-420C-9C7E-10BADF6D8577}.Debug|x64.ActiveCfg = Debug|x64
+		{8B9315DE-18FC-420C-9C7E-10BADF6D8577}.Debug|x64.Build.0 = Debug|x64
+		{8B9315DE-18FC-420C-9C7E-10BADF6D8577}.Debug|x86.ActiveCfg = Debug|Win32
+		{8B9315DE-18FC-420C-9C7E-10BADF6D8577}.Debug|x86.Build.0 = Debug|Win32
+		{8B9315DE-18FC-420C-9C7E-10BADF6D8577}.Release|x64.ActiveCfg = Release|x64
+		{8B9315DE-18FC-420C-9C7E-10BADF6D8577}.Release|x64.Build.0 = Release|x64
+		{8B9315DE-18FC-420C-9C7E-10BADF6D8577}.Release|x86.ActiveCfg = Release|Win32
+		{8B9315DE-18FC-420C-9C7E-10BADF6D8577}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
