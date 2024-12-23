@@ -1,17 +1,21 @@
 #include "WebSocketLib.h"
+#include "KinectLib.h"
 #include <iostream>
+#include <string>
 #include <Windows.h>
 
 const int LISTEN_PORT = 50008;
 
 WebSocketLib::Server server;
+KinectLib::Kinect orbbec;
 
 static BOOL WINAPI CtrlHandler(DWORD fdwCtrlType) {
 	switch (fdwCtrlType) {
 		// Handle the CTRL-C signal.
 	case CTRL_C_EVENT:
+		std::cout << "Receipt Ctrl-C event" << std::endl << std::endl;
 		server.Stop();
-		printf("Receipt Ctrl-C event\n\n");
+		orbbec.Stop();
 		return TRUE;
 
 		// CTRL-CLOSE: confirm that the user wants to exit.
@@ -41,8 +45,16 @@ static BOOL WINAPI CtrlHandler(DWORD fdwCtrlType) {
 	}
 }
 
+static void frameCallback(std::string msg) {
+	server.BroadCastMessage(msg);
+}
+
 int main() {
 	if (SetConsoleCtrlHandler(CtrlHandler, TRUE)) {
-		server.Init(LISTEN_PORT);
+		orbbec.Init();
+		orbbec.StartCapture(frameCallback);
+		server.Run(LISTEN_PORT);
 	}
+
+	return 0;
 }

@@ -24,19 +24,19 @@ void WebSocketLib::Server::BroadCastMessage(const char* message) {
 	this->BroadCastMessage(str);
 }
 
-void WebSocketLib::Server::Init(int listen_port) {
+void WebSocketLib::Server::Run(int listen_port) {
 	try {
 		websock_server.set_access_channels(websocketpp::log::alevel::all);
 		websock_server.clear_access_channels(websocketpp::log::alevel::frame_payload);
 
-		printf("-> server init\n");
+		std::cout << "-> server init" << std::endl;
 		websock_server.init_asio();
 		websock_server.set_open_handler(bind(&OnOpen, &connections, _1));
-		printf("-> listen :%d\n", listen_port);
+		std::cout << "-> listen :" << listen_port << std::endl;
 		websock_server.listen(listen_port);
 		websock_server.start_accept();
 
-		printf("\n::: start server :: : \n\n");
+		std::cout << std::endl << "::: start server :::" << std::endl << std::endl;
 		websock_server.run();
 	} catch (websocketpp::exception const& e) {
 		std::cout << "Failed to run server because: " << e.what() << std::endl;

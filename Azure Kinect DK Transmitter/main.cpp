@@ -1,20 +1,60 @@
-// Azure Kinect DK Transmitter.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
+#include "WebSocketLib.h"
+#include "KinectLib.h"
 #include <iostream>
+#include <string>
+#include <Windows.h>
 
-int main()
-{
-    std::cout << "Hello World!\n";
+const int LISTEN_PORT = 50008;
+
+WebSocketLib::Server server;
+KinectLib::Kinect kinect;
+
+static BOOL WINAPI CtrlHandler(DWORD fdwCtrlType) {
+	switch (fdwCtrlType) {
+		// Handle the CTRL-C signal.
+	case CTRL_C_EVENT:
+		std::cout << "Receipt Ctrl-C event" << std::endl << std::endl;
+		server.Stop();
+		kinect.Stop();
+		return TRUE;
+
+		// CTRL-CLOSE: confirm that the user wants to exit.
+	case CTRL_CLOSE_EVENT:
+		//Beep(600, 200);
+		//printf("Ctrl-Close event\n\n");
+		return TRUE;
+
+		// Pass other signals to the next handler.
+	case CTRL_BREAK_EVENT:
+		//Beep(900, 200);
+		//printf("Ctrl-Break event\n\n");
+		return FALSE;
+
+	case CTRL_LOGOFF_EVENT:
+		//Beep(1000, 200);
+		//printf("Ctrl-Logoff event\n\n");
+		return FALSE;
+
+	case CTRL_SHUTDOWN_EVENT:
+		//Beep(750, 500);
+		//printf("Ctrl-Shutdown event\n\n");
+		return FALSE;
+
+	default:
+		return FALSE;
+	}
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
+static void frameCallback(std::string msg) {
+	server.BroadCastMessage(msg);
+}
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+int main() {
+	if (SetConsoleCtrlHandler(CtrlHandler, TRUE)) {
+		kinect.Init();
+		kinect.StartCapture(frameCallback);
+		server.Run(LISTEN_PORT);
+	}
+
+	return 0;
+}

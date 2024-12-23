@@ -119,7 +119,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>D:\Users\kow08\AppData\Local\sdk\boost_1_71_0;D:\Users\kow08\AppData\Local\sdk\websocketpp-0.8.2</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(LOCALAPPDATA)\sdk\boost_1_86_0;$(LOCALAPPDATA)\sdk\websocketpp-0.8.2</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -137,7 +137,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>D:\Users\kow08\AppData\Local\sdk\boost_1_71_0;D:\Users\kow08\AppData\Local\sdk\websocketpp-0.8.2</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(LOCALAPPDATA)\sdk\boost_1_86_0;$(LOCALAPPDATA)\sdk\websocketpp-0.8.2</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>
